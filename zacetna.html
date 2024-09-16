@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Začetna stran</title>
+    <style>
+        /* Osnovni slog za telo in pisave */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+
+/* Slogi za nogo in navigacijsko vrstico */
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    padding: 10px 0;
+}
+
+.navbar a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+
+        /* Glavni prikaz na začetni strani */
+        .hero-section {
+          
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-section h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        .hero-section p {
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+
+        .hero-section button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .hero-section button:hover {
+            background-color: #45a049;
+        }
+
+        /* Sekcija z informacijami */
+        .info-section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .info-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .info-section p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #666;
+        }
+
+        /* Prehod za gumb v hero-sekciji */
+        .fade-in {
+            animation: fadeIn 2s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Slog za nogo strani */
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+        h1{
+            color: hotpink;
+        }
+        p{
+            color: red;
+        }
+        .konec{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Zgornji meni -->
+    <div class="navbar">
+        <a href="zacetna.html">Domov</a>
+        <a href="#about">O nas</a>
+          <a href="chat.html">chat</a>
+    <a href="odgovori.html">odgovori na čeferina</a>
+        <a href="#contact">Kontakt</a>
+        <a href="posodobitve.html">Posodobitve info</a>
+    </div>
+
+    <!-- Hero sekcija -->
+    <div class="hero-section">
+        <div class="fade-in">
+            <h1>DOBRODOŠLI NA SPLETNI STRANI</h1><br>
+            <p>za odgovore na čeferina </p>
+            
+            <button onclick="scrollToInfo()">Več informacij</button>
+        </div>
+    </div>
+
+    <!-- Informacijska sekcija -->
+    <div class="info-section" id="about">
+        <div class="fade-in">
+        <h2>O meni</h2>
+       
+        <p></p>
+        <p></p>
+    </div>
+    </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+    <!-- Noga strani -->
+    <div class="footer">
+        <p class="konec">© 2024 Vaša Družba. Vse pravice pridržane.</p>
+    </div>
+
+    <!-- JavaScript za pomik navzdol -->
+    <script>
+        function scrollToInfo() {
+            document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+
+</body>
+</html>

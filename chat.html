@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klepet</title>
+    <link rel="stylesheet" href="chat.css">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-box" id="chat-box">
+            <!-- Tu se bodo prikazovala sporočila -->
+        </div>
+        <div class="message-input">
+            <input type="text" id="message" placeholder="Vnesi sporočilo...">
+            <button onclick="sendMessage()">Pošlji</button>
+        </div>
+    </div>
+
+    <script>
+        // Funkcija za nalaganje sporočil iz LocalStorage
+        function loadMessages() {
+            const chatBox = document.getElementById('chat-box');
+            const storedMessages = JSON.parse(localStorage.getItem('chatMessages')) || [];
+
+            // Za vsako shranjeno sporočilo ga dodamo v chat
+            storedMessages.forEach(messageObj => {
+                const messageElement = document.createElement('div');
+                messageElement.classList.add('message', 'sent');
+                messageElement.innerHTML = `<strong>${messageObj.username}:</strong> ${messageObj.message}`;
+                chatBox.appendChild(messageElement);
+            });
+
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        // Funkcija za shranjevanje sporočil v LocalStorage
+        function saveMessage(username, messageText) {
+            const storedMessages = JSON.parse(localStorage.getItem('chatMessages')) || [];
+            storedMessages.push({ username, message: messageText });
+            localStorage.setItem('chatMessages', JSON.stringify(storedMessages));
+        }
+
+        // Funkcija za pošiljanje sporočila
+        function sendMessage() {
+            const messageInput = document.getElementById('message');
+            const chatBox = document.getElementById('chat-box');
+            const messageText = messageInput.value.trim();
+            const username = localStorage.getItem('username');
+
+            // Preveri, če je ukaz za brisanje in če ga je vnesel pravilni uporabnik
+            if (messageText === '/clearchat') {
+                if (username === 'matej22441') {
+                    clearChat();  // Dovoli brisanje
+                } else {
+                    alert('Samo uporabnik matej22441 lahko uporabi ukaz /clearchat.');
+                }
+                return;
+            }
+
+            if (messageText !== '' && username) {
+                // Ustvari element za sporočilo
+                const messageElement = document.createElement('div');
+                messageElement.classList.add('message', 'sent');
+                messageElement.innerHTML = `<strong>${username}:</strong> ${messageText}`;
+
+                // Dodaj sporočilo v chat
+                chatBox.appendChild(messageElement);
+                chatBox.scrollTop = chatBox.scrollHeight;
+
+                // Shrani sporočilo v LocalStorage
+                saveMessage(username, messageText);
+
+                // Pošlji sporočilo in počisti vnosno polje
+                messageInput.value = '';
+            }
+        }
+
+        // Funkcija za brisanje sporočil
+        function clearChat() {
+            const chatBox = document.getElementById('chat-box');
+            localStorage.removeItem('chatMessages'); // Odstrani vsa sporočila iz LocalStorage
+            chatBox.innerHTML = ''; // Počisti polje za klepet
+            alert('Vsa sporočila so bila izbrisana.');
+        }
+
+        // Ob nalaganju strani naloži vsa shranjena sporočila
+        window.onload = function() {
+            const username = localStorage.getItem('username');
+            if (!username) {
+                // Če uporabniško ime ni shranjeno, preusmeri nazaj na vpisno stran
+                window.location.href = 'login.html';
+            } else {
+                loadMessages();
+            }
+        };
+    </script>
+</body>
+</html>

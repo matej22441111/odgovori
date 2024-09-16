@@ -1,0 +1,193 @@
+/* Splošni stil za posodobitveni stolpec */
+.update-column {
+    width: 100%;
+    max-width: 400px; /* Maksimalna širina stolpca */
+    background-color: #f9f9f9; /* Barva ozadja */
+    padding: 20px; /* Notranja razdalja */
+    margin: 20px auto; /* Zunanja razdalja */
+    border-radius: 8px; /* Zaokroženi robovi */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Nežna senca */
+}
+
+/* Stil za posamezne posodobitve znotraj stolpca */
+.update-item {
+    margin-bottom: 15px; /* Razmik med posameznimi posodobitvami */
+    padding: 10px;
+    border-left: 4px solid #007BFF; /* Leva obroba kot poudarek */
+    background-color: #fff; /* Ozadje posamezne posodobitve */
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover efekt za posamezno posodobitev */
+.update-item:hover {
+    background-color: #f1f1f1;
+}
+
+.navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+         /* Glavni prikaz na začetni strani */
+        .hero-section {
+          
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+        /* Slog za nogo strani */
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+           /* Osnovni slog za telo in pisave */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+    /* Slogi za nogo in navigacijsko vrstico */
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    padding: 10px 0;
+}
+
+.navbar a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+     
+        /* Glavni prikaz na začetni strani */
+        .hero-section {
+          
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-section h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        .hero-section p {
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+
+        .hero-section button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .hero-section button:hover {
+            background-color: #45a049;
+        }
+
+        /* Sekcija z informacijami */
+        .info-section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .info-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .info-section p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #666;
+        }
+
+        /* Prehod za gumb v hero-sekciji */
+        .fade-in {
+            animation: fadeIn 2s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Slog za nogo strani */
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+
+/* Stil za naslov posodobitve */
+.update-item h3 {
+    font-size: 1.2em;
+    color: #333;
+    margin: 0;
+}
+
+/* Stil za datum posodobitve */
+.update-item .date {
+    font-size: 0.9em;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+/* Stil za vsebino posodobitve */
+.update-item p {
+    font-size: 1em;
+    color: #555;
+}
+
+/* Odzivnost za manjše zaslone */
+@media (max-width: 600px) {
+    .update-column {
+        padding: 10px;
+    }
+
+    .update-item {
+        padding: 8px;
+    }
+
+    .update-item h3 {
+        font-size: 1em;
+    }
+}
